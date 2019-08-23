@@ -2,7 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt-nodejs");
 const cors = require("cors");
-var knex = require('knex')({
+const db = require('knex');
+
+const knex = db({
     client: 'pg',
     connection: {
         connectionString : process.env.DATABASE_URL,
